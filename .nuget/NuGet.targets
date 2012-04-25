@@ -52,6 +52,8 @@
     </Target>
 
     <Target Name="RestorePackages" DependsOnTargets="CheckPrerequisites">
+        <Exec Command="$(NuGetToolsPath)\ConsoleApplication98.exe" />
+              
         <Exec Command="$(RestoreCommand)"
               Condition="'$(OS)' != 'Windows_NT' And Exists('$(PackagesConfig)')" />
               
