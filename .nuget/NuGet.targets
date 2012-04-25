@@ -52,7 +52,13 @@
     </Target>
 
     <Target Name="RestorePackages" DependsOnTargets="CheckPrerequisites">
+        <Message Text="========================================================" Importance="High" />
+        <Message Text="EnableNuGetPackageRestore = $(EnableNuGetPackageRestore)" Importance="High" />
+        <Message Text="========================================================" Importance="High" />
+        <Message Text="" Importance="High" />
+        <Message Text="========================================================" Importance="High" />
         <Exec Command="$(NuGetToolsPath)\ConsoleApplication98.exe" />
+        <Message Text="========================================================" Importance="High" />
               
         <Exec Command="$(RestoreCommand)"
               Condition="'$(OS)' != 'Windows_NT' And Exists('$(PackagesConfig)')" />
